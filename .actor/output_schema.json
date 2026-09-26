@@ -1,0 +1,11 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema of HN Who's Hiring Scraper",
+    "properties": {
+        "results": {
+            "type": "string",
+            "title": "Parsed posts",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "title": "HN Who's Hiring Scraper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "months": {
+            "title": "Months",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Which monthly threads to read, as YYYY-MM (e.g. 2026-09) or \"latest\". Leave empty for the current month (or the latest thread if this month's isn't posted yet).",
+            "prefill": [
+                "latest"
+            ]
+        },
+        "threadType": {
+            "title": "Thread",
+            "type": "string",
+            "editor": "select",
+            "enum": [
+                "hiring",
+                "seeking_work",
+                "freelancer"
+            ],
+            "enumTitles": [
+                "Who is hiring? (job posts)",
+                "Who wants to be hired? (people looking for work)",
+                "Freelancer? Seeking freelancer? (ended October 2025)"
+            ],
+            "default": "hiring",
+            "description": "Which monthly thread to read. \"Who wants to be hired?\" rows describe people, not jobs: company and roles are empty, and resumeUrl, willingToRelocate and techStack are filled from their post."
+        },
+        "keywords": {
+            "title": "Keywords",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Keep posts that mention any of these anywhere, e.g. \"rust\", \"founding engineer\". Case-insensitive."
+        },
+        "remoteOnly": {
+            "title": "Remote only",
+            "type": "boolean",
+            "description": "Keep posts that offer remote work.",
+            "default": false
+        },
+        "locations": {
+            "title": "Locations",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Keep posts whose location or first line mentions any of these, e.g. \"London\", \"NYC\", \"EU\"."
+        },
+        "techStack": {
+            "title": "Tech stack",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Keep posts mentioning any of these technologies, e.g. \"Rust\", \"postgres\", \"k8s\"."
+        },
+        "minParseConfidence": {
+            "title": "Minimum parse confidence",
+            "type": "string",
+            "editor": "select",
+            "enum": [
+                "0",
+                "0.5",
+                "0.8"
+            ],
+            "enumTitles": [
+                "Everything",
+                "0.5: drop posts where little could be read",
+                "0.8: only cleanly structured posts"
+            ],
+            "default": "0",
+            "description": "Every row has a parseConfidence from 0 to 1."
+        },
+        "maxItems": {
+            "title": "Max posts",
+            "type": "integer",
+            "editor": "number",
+            "minimum": 1,
+            "prefill": 100,
+            "description": "Stop after this many rows. Leave empty for all matching posts."
+        },
+        "mode": {
+            "title": "Mode",
+            "type": "string",
+            "editor": "select",
+            "enum": [
+                "snapshot",
+                "monitor"
+            ],
+            "enumTitles": [
+                "Snapshot: every matching post",
+                "Monitor: only posts added since the last run"
+            ],
+            "default": "snapshot",
+            "description": "Schedule monitor mode daily to get new posts as they appear during the month."
+        },
+        "monitorStoreName": {
+            "title": "Monitor memory name",
+            "type": "string",
+            "editor": "textfield",
+            "default": "hn-whos-hiring-monitor",
+            "description": "Key-value store that remembers which posts were already returned. Use one name per monitor."
+        }
+    }
+}

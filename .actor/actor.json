@@ -1,0 +1,13 @@
+{
+    "actorSpecification": 1,
+    "name": "hn-whos-hiring-parser",
+    "title": "HN Who's Hiring Scraper: Hacker News Jobs Parsed",
+    "description": "Turn Hacker News \"Ask HN: Who is hiring?\" threads into clean job rows: company, roles, location, remote/onsite/hybrid, salary range, visa sponsorship, tech stack, apply link and contact email. Filters, monitor mode, and the \"Who wants to be hired?\" thread too.",
+    "version": "0.1",
+    "meta": {
+        "templateId": "custom-no-proxy"
+    },
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "dockerfile": "../Dockerfile"
+}
