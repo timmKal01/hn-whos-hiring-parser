@@ -1,0 +1,83 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "company",
+                    "roles",
+                    "location",
+                    "remote",
+                    "salaryMin",
+                    "salaryMax",
+                    "salaryCurrency",
+                    "salaryInterval",
+                    "techStack",
+                    "visaSponsorship",
+                    "applyUrl",
+                    "postedAt",
+                    "sourceUrl"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "company": {
+                        "label": "Company",
+                        "format": "text"
+                    },
+                    "roles": {
+                        "label": "Roles",
+                        "format": "array"
+                    },
+                    "location": {
+                        "label": "Location",
+                        "format": "text"
+                    },
+                    "remote": {
+                        "label": "Remote",
+                        "format": "text"
+                    },
+                    "salaryMin": {
+                        "label": "Salary min",
+                        "format": "number"
+                    },
+                    "salaryMax": {
+                        "label": "Salary max",
+                        "format": "number"
+                    },
+                    "salaryCurrency": {
+                        "label": "Salary currency",
+                        "format": "text"
+                    },
+                    "salaryInterval": {
+                        "label": "Salary interval",
+                        "format": "text"
+                    },
+                    "techStack": {
+                        "label": "Tech stack",
+                        "format": "array"
+                    },
+                    "visaSponsorship": {
+                        "label": "Visa sponsorship",
+                        "format": "boolean"
+                    },
+                    "applyUrl": {
+                        "label": "Apply URL",
+                        "format": "link"
+                    },
+                    "postedAt": {
+                        "label": "Posted at",
+                        "format": "date"
+                    },
+                    "sourceUrl": {
+                        "label": "Source URL",
+                        "format": "link"
+                    }
+                }
+            }
+        }
+    }
+}
